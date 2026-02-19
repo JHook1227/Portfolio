@@ -10,28 +10,28 @@ website:
   title: "Portfolio: Joseph Hook"
   navbar:
     left:
-      - href: src/index.qmd
+      - href: index.html
         text: Home
 
-      - href: src/about.qmd
+      - href: about.html
         text: About
 
-      - href: src/blog.qmd
+      - href: blog.html
         text: Project Blog
       
-      - href: src/education.qmd
+      - href: education.html
         text: Education 
       
-      - href: src/technical_skills.qmd
+      - href: technical_skills.html
         text: Technical Skills
       
-      - href: src/projects.qmd
+      - href: projects.html
         text: Projects
 
-      - href: src/resume.qmd
+      - href: resume.html
         text: Resume
 
-      - href: src/contact.qmd
+      - href: contact.html
         text: Contact Information
 
 format:
