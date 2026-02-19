@@ -1,0 +1,31 @@
+---
+title: "Technical Skills"
+---
+
+# Proficiencies
+
+Python:
+
+    Matplotlib
+
+    NumPy
+
+    Pandas
+
+    Seaborn
+
+    SciPy
+    
+    SciKit-Learn
+
+SQL
+
+Flask
+
+PowerBI
+
+Tableau
+
+C++
+
+    

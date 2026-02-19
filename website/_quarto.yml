@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: docs
+  
+  
+
+project-base-url: /Portfolio/
+
+website:
+
+  title: "Portfolio: Joseph Hook"
+  navbar:
+    left:
+      - href: src/index.html
+        text: Home
+
+      - href: src/about.html
+        text: About
+
+      - href: src/blog.html
+        text: Project Blog
+      
+      - href: src/education.html
+        text: Education 
+      
+      - href: src/technical_skills.html
+        text: Technical Skills
+      
+      - href: src/projects.html
+        text: Projects
+
+      - href: src/resume.html
+        text: Resume
+
+      - href: src/contact.html
+        text: Contact Information
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+

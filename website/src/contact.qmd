@@ -1,0 +1,11 @@
+---
+title: "Contact Information"
+---
+
+Email: jhook1173@gmail.com
+
+GitHub: https://github.com/JHook1227/Portfolio.git
+
+Location: Kansas City, Kansas
+
+(for the purposes of this course I don't want to put a lot of PII on thie website)
