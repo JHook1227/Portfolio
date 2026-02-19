@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <h1>{% block title %} Application {% endblock %}</h1>
+
+ <body>
+    <h1>Welcome!</h1>
+    <h2>Login</h2>
+
+    <form action="/login" method="post">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="text" id="password" name="password" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+            <br><a href="{{ url_for('dashboard_main') }}"><button>Force Login (Testing only)</button></a>
+
+    <p>
+        <a href="{{ url_for('forgot_password')}}">Forgot Password?</a>
+        <a href="{{ url_for('account_registration') }}">Register</a>
+    </p>
+</body>
+{% endblock %}
