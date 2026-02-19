@@ -1,6 +1,7 @@
 project:
   type: website
-  output-dir: docs
+
+output-dir: docs
 
 project-base-url: /Portfolio/
 
@@ -11,7 +12,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-        
+
       - href: about.qmd
         text: About
 
