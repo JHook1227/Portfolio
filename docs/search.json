@@ -1,16 +1,58 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "src/technical_skills.html",
+    "href": "src/technical_skills.html",
+    "title": "Technical Skills",
     "section": "",
-    "text": "About this site"
+    "text": "Proficiencies\nPython:\nMatplotlib\n\nNumPy\n\nPandas\n\nSeaborn\n\nSciPy\n\nSciKit-Learn\nSQL\nFlask\nPowerBI\nTableau\nC++"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "src/projects.html",
+    "href": "src/projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Assisted Reproductive Technology (ART) regression analysis and user application"
+  },
+  {
+    "objectID": "src/education.html",
+    "href": "src/education.html",
+    "title": "Education",
+    "section": "",
+    "text": "AS: Criminal Justice\nBS: Exercise Science, Health Sciences\nBS: Applied Computer Science, concentration on Data Science (May 2026)\nCertifications:\nBLS\nACLS"
+  },
+  {
+    "objectID": "src/blog.html",
+    "href": "src/blog.html",
+    "title": "Week 1:",
+    "section": "",
+    "text": "Assisted Reproductive Technology (ART) regression analysis and user application blog:\n\nWeek 1:\nThis first week was the initial planning stage outlining the subject matter of the project and what I want the end product to show in terms of skill and exploration.\n\n\nWeek 2:\nWhat did you do last week?\nLast week I explored the direction I plan to go with my project, specifically creating a rough timeline and achievable goals. I’m still homing in on what is achievable with a wants v. needs type of approach. I plan to create a predictive model starting with one feature then expanding it. My priority is the backend workings of the model then linking it to a simple frontend design\nWhat do you plan to do this week?\nThis week I plan to setup my website and do more research on applicable techniques as well as review my dataset and transforming it into usable information\nAre there any impediments in your way?\nJust myself, after a long break and this being my final semester it’s been a slower ramp up than in the past but I’m simply focusing on doing one thing at a time. The short week and crazy snow storm had my week not really matching up with course schedules.\nReflection on the process you used last week, how can you make the process work better?\nThere wasn’t much of a structured process last week, it was more so just doing some thinking and cursory google searches. I’m creating a little checklist of tasks this week to ramp back up into an efficient working setup.\n\n\nWeek 3:\nWhat did you do last week?\nI completed the project proposal rough draft and decided on the specific frameworks I’ll be using for each person. I will be primarily using Flask, Python based modules, and SQLite. I did some preliminary data cleaning and identified the attributes with the best backing data.\nWhat do you plan to do this week?\nThis week I plan to do some initial data transformation and exploration just to get in the flow of building this project. Additionally, I plan to set up my frontend Flask template to start a front-to-back approach to the application. I also plan to format my site.\nAre there any impediments in your way?\nNot particularly, time mostly. I think continuing to work on the steps I identified in the initial planning stage will help build momentum.\nReflection on the process you used last week, how can you make the process work better?\nI spent a little too much time in the contemplation stage last week and this week I plan to take more action. Putting together the rough version of my frontend will motivate me to work on it once I see how ugly it is initially. Time is always a factor but I have put together a work/rest schedule for myself this weekend.\n\n\nWeek 4:\nWhat did you do last week?\nLast week I finished the project proposals and reviewed the feedback I received to better home in on my project. Additionally, I began laying the foundation for the UI and some data preprocessing.\nWhat do you plan to do this week?\nThis week I implemented a login page and database for users as well as laying the ground-work for my users attributes database. I used Flask for the front-end and SQLite for the database. I initially wrote the front-end in with simple logic and template rendering with placeholder names. Additionally, I got some free templates online and started to plug them in to my existing code.\nAre there any impediments in your way?\nThis was a weird week and I was working without internet access for most of it which made some of the issues I ran into harder to solve. The upcoming week will be much more productive\nReflection on the process you used last week, how can you make the process work better?\nMy process last week was to simply do what I could given the circumstances. Next week should be much more normal and will allow me to utilize available resources much better. My small issues were solved by looking at previous code bases on my machine.\n\n\nWeek 5:\nWhat did you do last week?\nI implemented a login page with a connected local database for simple login querying. As it is low on my priority list it’s moreso the minimal needed to make the app work. I’m currently using a plan of creating a prototype app from front to back, then developing in a greater scope from back to front.\nWhat do you plan to do this week?\nThis week I need to focus on getting my website up and running, but this weekend I plan to do some heavy lifting on the dashboard and linking my analytical code to one or more features in the dashboard. Users entering values then getting a return value from my code for a single feature would be the benchmark by the end of the week.\nAre there any impediments in your way?\nNo, considering last week wasn’t as productive as I would have liked I have allocated more time to schoolwork this week. I have clear vision of what I want the application to look like by the end of the week and have drawn out a roadmap with bullet points of what I need for each benchmark.\nReflection on the process last week and how can I make it better?\nLast week my process wasn’t structured enough. This week I have a distinct plan both in my time and a roadmap for what I want accomplished and how I will do it.\n\n\nWeek 6:\n\n\nWeek 7:\n\n\nWeek 8:\n\n\nWeek 9:\n\n\nWeek 10:\n\n\nWeek 11:"
+  },
+  {
+    "objectID": "src/about.html",
+    "href": "src/about.html",
+    "title": "About",
+    "section": "",
+    "text": "My name is Joseph, a Senior Applied Computer Science student at CU Boulder with a focus in Data Science. Specifically I am drawn to medical/health-related data projects and aspire to influence positive change for the community at large with my work. I enjoy challenging problems that require creativity and technical skills to solve. My goal is to transition from a frontline health care worker to affecting change at a larger scale with analytical contributions"
+  },
+  {
+    "objectID": "src/contact.html",
+    "href": "src/contact.html",
+    "title": "Contact Information",
+    "section": "",
+    "text": "Email: jhook1173@gmail.com\nGitHub: https://github.com/JHook1227/Portfolio.git\nLocation: Kansas City, Kansas\n(for the purposes of this course I don’t want to put a lot of PII on thie website)"
+  },
+  {
+    "objectID": "src/index.html",
+    "href": "src/index.html",
     "title": "Portfolio: Joseph Hook",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "src/resume.html",
+    "href": "src/resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Electrophysiology Technologist II | KUMC – Kansas City, KS\n\n\nSep 2023 – Present\n• Facilitated electrophysiology (EP) studies by analyzing intracardiac EGMs and executing cardiac stimulation protocols to identify arrhythmias\n• Served as scrub technologist for ablation and device procedures, supporting physicians in safe and effective patient care\n• Setup cardiac mapping systems: CARTO, Affera, Opal, Ensite X, Ensite Precision\n• Troubleshot catheter and mapping system issues such as pinning errors, connection failures, and equipment malfunctions—to ensure uninterrupted procedural workflow\n\n\nExercise Physiologist | HCA – Denver, CO\n\n\nDecember 2021 – Sep 2023\n• Created custom exercise plans to meet the needs of patients in coordination with Physical, Occupational and Speech Therapists to execute the individualized plan of care.\n• Educated patients on exercise programs and created appropriate Home Exercise Program when patients are discharged.\n• Operated and managed the EKSO bionic exoskeleton program in tandem with Physical Therapists.\n• Maintained treatment areas, exercise equipment, as well as DME ordering.\n\n\nFlight Chief | United States Air Force – May 2012 – May 2019\n● Acted as on-scene commander for emergency crises by establishing secure areas and coordinating emergency responses.\n● Enforced security protocols which included Random Anti-Terrorism Measures and in-depth alarm notification systems.\n● Efficiently managed a diverse workforce and training program to ensure subordinates were prepared for their duties.\n● Managed security clearance certification program by conducting background investigations."
   }
 ]
