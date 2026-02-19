@@ -11,12 +11,27 @@ website:
     left:
       - href: index.qmd
         text: Home
+        
       - href: about.qmd
         text: About
+
+      - href: blog.qmd
+        text: Project Blog
+      
+      - href: education.qmd
+        text: Education 
+      
+      - href: technical_skills.qmd
+        text: Technical Skills
+      
       - href: projects.qmd
         text: Projects
+
       - href: resume.qmd
         text: Resume
+
+      - href: contact.qmd
+        text: Contact Information
 
 format:
   html:
