@@ -2,4 +2,6 @@
 title: "About"
 ---
 
-About this site
+My name is Joseph, a Senior Applied Computer Science student at CU Boulder with a focus in Data Science. Specifically I am drawn
+to medical/health-related data projects and aspire to influence positive change for the community at large with my work.
+I enjoy challenging problems that require creativity and technical skills to solve. My goal is to transition from a frontline health care worker to affecting change at a larger scale with analytical contributions
