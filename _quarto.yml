@@ -1,7 +1,11 @@
 project:
   type: website
 
+output-dir: _site
+project-base-url: /Portfolio/
+
 website:
+
   title: "Portfolio: Joseph Hook"
   navbar:
     left:

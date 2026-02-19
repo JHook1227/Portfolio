@@ -28,9 +28,8 @@ def create(database, username, password):
     try: 
         conn = sqlite3.connect(database)
         c = conn.cursor()
-        c.execute("INSERT INTO users (USERNAME, PASSWORD) VALUES (?,?)", [username, password])
+        c.execute("INSERT INTO users (username, password) VALUES (?,?)", [username, password])
         conn.commit()
-        results = c.fetchone()
         conn.close()
 
         return results
