@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <h2> Dahsboard - User</h2>
+
+        <form method="POST">
+            <label> Choose attribute 1:</label>
+            <select name="attribute 1">
+                <option value="A">A</option>
+                <option value="B">B</option>
+            </select>
+            <label> Choose attribute 2:</label>
+            <select name="attribute 2">
+                <option value="A">A</option>
+                <option value="B">B</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if result %}
+        <h3>Result:</h3>
+        <p>{{ result }}</p>
+        <h4>Description:</h4>
+        <p>{{ description }}</p>
+        {% endif%}
+    </body>
+</html>
