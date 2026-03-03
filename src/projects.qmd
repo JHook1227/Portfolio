@@ -1,5 +1,0 @@
----
-title: "Projects"
----
-
-Assisted Reproductive Technology (ART) regression analysis and user application

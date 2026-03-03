@@ -61,6 +61,10 @@ def generate_graphs():
     #shows trends based on demographics
     #matplotlibe selection
     return("graphs")
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
     
 
 def log_in_form():
@@ -74,7 +78,7 @@ def log_in():
 
     if user and user[2] == password:
         session['user'] = username
-        return redirect(url_for('index'))
+        return redirect(url_for('dashboard'))
     else:
         return "Invalid Credentials", 401
     
