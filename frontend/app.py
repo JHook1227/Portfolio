@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, redirect, url_for, session
 from backend import users
 import os
 import sqlite3
+from services.analysis import expected_num_cycles, summary_success_all
 
 app = Flask(__name__)
 database = os.path.join(os.path.dirname(__file__), 'database.db')
@@ -62,9 +63,16 @@ def generate_graphs():
     #matplotlibe selection
     return("graphs")
 
-@app.route("/dashboard")
+@app.route("/dashboard", methods=["GET", "POST"])
 def dashboard():
-    return render_template("dashboard.html")
+    result = None
+    description = None
+    if request.method == "POST":
+        state = request.form.get("State")
+        attribute = request.form.get("Patient type")
+
+        result, description = expected_num_cycles(state, attribute)
+    return render_template("dashboard.html", result=result, description=description)
     
 
 def log_in_form():
