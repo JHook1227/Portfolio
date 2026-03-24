@@ -3,6 +3,11 @@ import numpy as np
 import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+
 
 region_map = {'CT' : 'NorthEast', 'ME' : 'NorthEast', 'MA' : 'NorthEast', 'NH' : 'NorthEast', 'RI' : 'NorthEast', 'VT' : 'NorthEast', 'NJ' : 'NorthEast', 'NY' : 'NorthEast', 'PA' : 'NorthEast',
               
@@ -256,3 +261,70 @@ def expected_num_cycles(state, attribute, df = clean_all):
     description = "Placeholder description"
 
     return result, description
+
+
+
+def bootstrap_linear(df, features, n_bootstrap=100, random_state=42):
+    rng = np.random.default_rng(random_state)
+
+    model_df = df[["LocationAbbr","Type", "Data_Value_num"]].copy()
+
+    model_df = model_df.rename(columns={"Data_Value_num":"success_rate"})
+    model_df = model_df.dropna()
+
+    X = model_df[["LocationAbbr", "Type"]]
+    y = model_df["success_rate"].values
+
+    encoder = OneHotEncoder(drop='first', sparse_output=False)
+    X_encoded = encoder.fit_transform(X)
+
+    input_df = pd.DataFrame([features])
+
+    for col in features:
+        if features[col] not in model_df[col].unique():
+            raise ValueError("Unknown categoty")
+    
+    input_df = pd.DataFrame([features])
+    input_encoded = encoder.transform(input_df)
+
+    X_train, X_test, y_train, y_test = train_test_split(X_encoded, y, test_size=0.2, random_state=42)
+    n = len(model_df)
+    predictions = []
+
+    for _ in range(n_bootstrap):
+        sample_idx = rng.choice(n, size=n, replace=True)
+       
+
+        X_sample, y_sample = X_encoded[sample_idx, :], y[sample_idx]
+       
+
+        model = LinearRegression()
+        model.fit(X_sample, y_sample)
+
+        pred = model.predict(input_encoded)[0]
+        predictions.append(pred)
+        
+        
+    predictions = np.array(predictions)
+    expected_success = predictions.mean()
+
+    expected_cycles = None
+        
+    if expected_success > 0:
+        expected_cycles = 1 / (expected_success/100)
+    
+    model_full = LinearRegression()
+    model_full.fit(X_train, y_train)
+
+    y_pred_test = model_full.predict(X_test)
+
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred_test))
+
+    return {"LocationAbbr": features["LocationAbbr"],
+            "Type": features["Type"],
+            "expected_success_rate": expected_success,
+            "expected_cycles": expected_cycles,
+            "std_dev": predictions.std(),
+            "ci_95": (np.percentile(predictions, 2.5),
+                      np.percentile(predictions, 97.5)),
+            "RMSE": rmse}

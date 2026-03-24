@@ -3,6 +3,7 @@ from backend import users
 import os
 import sqlite3
 from services.analysis import expected_num_cycles, summary_success_all
+from services.analysis import bootstrap_linear, clean_all
 
 app = Flask(__name__)
 database = os.path.join(os.path.dirname(__file__), 'database.db')
@@ -67,12 +68,21 @@ def generate_graphs():
 def dashboard():
     result = None
     description = None
+    type_ = None
+    location = None
+
     if request.method == "POST":
         state = request.form.get("State")
         attribute = request.form.get("Patient type")
+        user_input = {"LocationAbbr":state, "Type":attribute}
 
-        result, description = expected_num_cycles(state, attribute)
-    return render_template("dashboard.html", result=result, description=description)
+        result_dict = bootstrap_linear(clean_all, user_input)
+
+        location = user_input["LocationAbbr"]
+        type_ = user_input["Type"]
+        result = result_dict["expected_success_rate"]
+        description = result_dict
+    return render_template("dashboard.html", result=result, description=description, location=location, type=type_)
     
 
 def log_in_form():
