@@ -7,6 +7,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
+from scipy.stats import chi2_contingency
 
 
 region_map = {'CT' : 'NorthEast', 'ME' : 'NorthEast', 'MA' : 'NorthEast', 'NH' : 'NorthEast', 'RI' : 'NorthEast', 'VT' : 'NorthEast', 'NJ' : 'NorthEast', 'NY' : 'NorthEast', 'PA' : 'NorthEast',
@@ -271,38 +272,54 @@ def bootstrap_linear(df, features, n_bootstrap=100, random_state=42):
 
     model_df = model_df.rename(columns={"Data_Value_num":"success_rate"})
     model_df = model_df.dropna()
+    #feature engineerring rel between location and type
+    #model_df["State_Type"] = model_df["LocationAbbr"] + "_" + model_df["Type"]
 
     X = model_df[["LocationAbbr", "Type"]]
-    y = model_df["success_rate"].values
+    #target transformation
+    y_raw = model_df["success_rate"].values / 100.0
 
-    encoder = OneHotEncoder(drop='first', sparse_output=False)
-    X_encoded = encoder.fit_transform(X)
+    eps = 1e-6
 
-    input_df = pd.DataFrame([features])
+    y_raw = np.clip(y_raw, eps, 1- eps)
+    #logit transform
+    y = np.log(y_raw / (1 - y_raw))
 
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    
     for col in features:
         if features[col] not in model_df[col].unique():
-            raise ValueError("Unknown categoty")
-    
+            raise ValueError("Unknown category")
+        
+    encoder = OneHotEncoder(drop='first', sparse_output=False)
+    X_encoded = encoder.fit_transform(X_train)
+
     input_df = pd.DataFrame([features])
+    #input_df["State_Type"] = (input_df["LocationAbbr"] + "_" + input_df["Type"])
+    input_df = input_df[["LocationAbbr", "Type"]]
     input_encoded = encoder.transform(input_df)
 
-    X_train, X_test, y_train, y_test = train_test_split(X_encoded, y, test_size=0.2, random_state=42)
-    n = len(model_df)
+  
+
+    n = X_encoded.shape[0]
+
     predictions = []
+ 
 
     for _ in range(n_bootstrap):
         sample_idx = rng.choice(n, size=n, replace=True)
        
 
-        X_sample, y_sample = X_encoded[sample_idx, :], y[sample_idx]
+        X_sample, y_sample = X_encoded[sample_idx, :], y_train[sample_idx]
        
 
         model = LinearRegression()
         model.fit(X_sample, y_sample)
 
         pred = model.predict(input_encoded)[0]
-        predictions.append(pred)
+        #sigmoid back to 0-1
+        pred_prob = 1 / (1 + np.exp(-pred))
+        predictions.append(pred_prob * 100)
         
         
     predictions = np.array(predictions)
@@ -314,9 +331,11 @@ def bootstrap_linear(df, features, n_bootstrap=100, random_state=42):
         expected_cycles = 1 / (expected_success/100)
     
     model_full = LinearRegression()
-    model_full.fit(X_train, y_train)
+    model_full.fit(X_encoded, y_train)
+    X_test_encoded = encoder.transform(X_test)
 
-    y_pred_test = model_full.predict(X_test)
+    y_pred_test_logit = model_full.predict(X_test_encoded)
+    y_pred_test = 1 / (1 + np.exp(-y_pred_test_logit)) * 100
 
     rmse = np.sqrt(mean_squared_error(y_test, y_pred_test))
 
@@ -328,3 +347,22 @@ def bootstrap_linear(df, features, n_bootstrap=100, random_state=42):
             "ci_95": (np.percentile(predictions, 2.5),
                       np.percentile(predictions, 97.5)),
             "RMSE": rmse}
+
+def test_independence(df):
+    #contingency table
+    contingency_table = pd.crosstab(df["LocationAbbr"], df["Type"])
+
+    chi2, p, dof, expected = chi2_contingency(contingency_table)
+
+    print("Chi-square statistic:", chi2)
+    print("p-value:", p)
+    print("Degrees of freedom:", dof)
+    
+    if p < 0.05:
+        print("\nConclusion: Variables are NOT independent (there is an association).")
+    else:
+        print("\nConclusion: No strong evidence of association (independence plausible).")
+    
+    return chi2, p, dof, expected
+
+test_independence(clean_all)
