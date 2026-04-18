@@ -365,4 +365,5 @@ def test_independence(df):
     
     return chi2, p, dof, expected
 
-test_independence(clean_all)
+#test_independence(clean_all)
+print(sorted(clean_all["LocationAbbr"].dropna().unique(), reverse=False))
