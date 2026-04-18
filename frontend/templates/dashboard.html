@@ -2,9 +2,31 @@
 <html>
     <head>
         <title>Dashboard</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            h2, h3, h4, h5, h6, h7, label, p, option, button {
+                font-family: Arial, sans-serif;
+            }
+            select, button {
+                padding: 8px;
+                margin: 5px 0;
+            }
+            button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #45a049;
+            }   
+        </style>
     </head>
     <body>
-        <h2> Dahsboard - User</h2>
+        <h2> Dashboard - User</h2>
 
         <form method="POST">
             <label> Choose attribute 1:</label>
@@ -62,8 +84,11 @@
                 <option value="Patients with no prior ART using their own eggs">Patients with no prior ART using their own eggs</option>
             </select>
             <label> Choose attribute 3: </label>
-            <select name = "Age">
-                <option Value="35-40">35-40</option>
+            <select name = "Breakout">
+                <option Value="&lt;35"> &lt;35 </option>
+                <option Value="35-37">35-37</option>
+                <option Value="38-40">38-40</option>
+                <option Value="&gt;40"> &gt;40 </option>
             </select>
 
             <button type="submit">Submit</button>
@@ -76,6 +101,8 @@
         <p>{{ location }}</p>
         <h6>Type:</h6>
         <p>{{ type }}</p>
+        <h7>Age:</h7>
+        <p>{{ breakout }}</p>
         <h4>Description:</h4>
         <p>{{ description }}</p>
         {% endif%}

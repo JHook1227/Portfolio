@@ -250,6 +250,7 @@ clean_all = pd.concat([clean_20, clean_21, clean_22], ignore_index=True)
 
 
 
+
 def expected_num_cycles(state, attribute, df = clean_all):
     print(state)
     print(attribute)
@@ -267,15 +268,24 @@ def expected_num_cycles(state, attribute, df = clean_all):
 
 def bootstrap_linear(df, features, n_bootstrap=100, random_state=42):
     rng = np.random.default_rng(random_state)
-
-    model_df = df[["LocationAbbr","Type", "Data_Value_num"]].copy()
+    # "Breakout" for age
+    model_df = df[["LocationAbbr","Type", "Data_Value_num", "Breakout"]].copy()
 
     model_df = model_df.rename(columns={"Data_Value_num":"success_rate"})
     model_df = model_df.dropna()
-    #feature engineerring rel between location and type
-    #model_df["State_Type"] = model_df["LocationAbbr"] + "_" + model_df["Type"]
+    
+    # Sanity check for Breakout
+    if (features["Breakout"] in model_df["Breakout"].unique()):
+        use_breakout = features["Breakout"]
+    else:
+        use_breakout = "Data not available"
 
-    X = model_df[["LocationAbbr", "Type"]]
+    
+    if use_breakout:
+        X = model_df[["LocationAbbr", "Type", "Breakout"]]
+    else:
+        X = model_df[["LocationAbbr", "Type"]]
+    
     #target transformation
     y_raw = model_df["success_rate"].values / 100.0
 
@@ -286,17 +296,20 @@ def bootstrap_linear(df, features, n_bootstrap=100, random_state=42):
     y = np.log(y_raw / (1 - y_raw))
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    #print(features)
     
-    for col in features:
+    for col in X.columns:
         if features[col] not in model_df[col].unique():
-            raise ValueError("Unknown category")
+            raise ValueError(f"Unknown category for {col}")
         
     encoder = OneHotEncoder(drop='first', sparse_output=False)
     X_encoded = encoder.fit_transform(X_train)
 
     input_df = pd.DataFrame([features])
-    #input_df["State_Type"] = (input_df["LocationAbbr"] + "_" + input_df["Type"])
-    input_df = input_df[["LocationAbbr", "Type"]]
+    if use_breakout:
+        input_df = input_df[["LocationAbbr", "Type", "Breakout"]]
+    else:
+        input_df = input_df[["LocationAbbr", "Type"]]
     input_encoded = encoder.transform(input_df)
 
   
@@ -341,6 +354,7 @@ def bootstrap_linear(df, features, n_bootstrap=100, random_state=42):
 
     return {"LocationAbbr": features["LocationAbbr"],
             "Type": features["Type"],
+            "Age": use_breakout,
             "expected_success_rate": expected_success,
             "expected_cycles": expected_cycles,
             "std_dev": predictions.std(),
@@ -366,4 +380,5 @@ def test_independence(df):
     return chi2, p, dof, expected
 
 #test_independence(clean_all)
-print(sorted(clean_all["LocationAbbr"].dropna().unique(), reverse=False))
+
+

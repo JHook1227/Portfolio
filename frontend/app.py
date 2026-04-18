@@ -70,19 +70,22 @@ def dashboard():
     description = None
     type_ = None
     location = None
-
+    breakout = None
     if request.method == "POST":
         state = request.form.get("State")
         attribute = request.form.get("Patient type")
-        user_input = {"LocationAbbr":state, "Type":attribute}
+        breakout = request.form.get("Breakout")
+        user_input = {"LocationAbbr":state, "Type":attribute, "Breakout":breakout}
 
         result_dict = bootstrap_linear(clean_all, user_input)
 
         location = user_input["LocationAbbr"]
         type_ = user_input["Type"]
+        breakout = user_input["Breakout"]
         result = result_dict["expected_success_rate"]
         description = result_dict
-    return render_template("dashboard.html", result=result, description=description, location=location, type=type_)
+
+    return render_template("dashboard.html", result=result, description=description, location=location, type=type_, breakout=breakout)
     
 
 def log_in_form():
