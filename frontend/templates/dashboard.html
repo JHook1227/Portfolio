@@ -96,7 +96,13 @@
 
         {% if result %}
         <h3>Result:</h3>
-        <p>{{ result }}</p>
+        {% if result > 70.0 %}
+        <div style="background-color: red; color: white; padding: 10px; display: inline-block;">{{ result }}</div>
+        {% elif result > 15.0 %}
+        <div style="background-color: yellow; padding: 10px; display: inline-block;">{{ result }}</div>
+        {% else %}
+        <div style="background-color: green; color: white; padding: 10px; display: inline-block;">{{ result }}</div>
+        {% endif %}
         <h5>Location:</h5>
         <p>{{ location }}</p>
         <h6>Type:</h6>
