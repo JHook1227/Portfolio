@@ -32,7 +32,7 @@ def init_db():
 def index():
     return "<p>Contents:</p>"
 
-@app.route("/login", methods=['GET','POST'])
+@app.route("/", methods=['GET','POST'])
 def login():
     print("Login route hit")
     print("Request method:", request.method)
