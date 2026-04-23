@@ -238,4 +238,27 @@ Are there any impediments in your way?
 No, I wish the things I tried would have produced a result that improved my values, but it was still fruitful to see what didn't work or didn't change. Sometimes that's just as valuable especially as a learning medium
 
 Reflection on the process you used last week, how can you make the process work better?
+
 The process I used last week was to pick something I wanted to try, research, implement, and analyze. It worked well.
+
+# Week 12:
+
+What did you do last week?
+
+Last week I polished my project a little and focused on tightening up the presentation of my project.
+
+What do you plan to do this week?
+
+Write up my final presentation and ensure my website is updated and code is working as intended.
+
+Are there any impediments in your way?
+
+No.
+
+Reflection on the process you used last week, how can you make the process work better?
+
+My process last week was to simply work on the project and make it look nicer. I will continue to use the same process this week as well as allocating some time to writing up my presentation.
+
+# Week 13:
+
+[Download/View PDF](ProjectFinal.pdf)
