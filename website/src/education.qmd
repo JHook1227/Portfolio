@@ -2,11 +2,11 @@
 title: "Education"
 ---
 
-AS: Criminal Justice
+BS: Applied Computer Science, Data Science Pathway, CU Boulder
 
-BS: Exercise Science, Health Sciences
+BS: Exercise Science, Health Sciences, MSU Denver
 
-BS: Applied Computer Science, concentration on Data Science 
+AS: Criminal Justice, Community College of the Air Force
 
 Certifications:
 

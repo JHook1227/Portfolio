@@ -2,4 +2,8 @@
 title: "Projects"
 ---
 
+Assisted Reproductive Technology (ART) Data Mining and Analysis: https://github.com/JHook1227/DM-Project.git
+
 Assisted Reproductive Technology (ART) regression analysis and user application https://github.com/JHook1227/Portfolio.git
+
+Machine Learning Analysis of Diabetes-Related Amputations https://github.com/JHook1227/Diabetes_RF.git

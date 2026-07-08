@@ -4,28 +4,15 @@ title: "Technical Skills"
 
 # Proficiencies
 
-Python:
+•	Programming: Python, SQL, C++, HTML
 
-    Matplotlib
+•	Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
 
-    NumPy
+•	Tools: Git, GitHub, Jupyter Notebook, VS Code
 
-    Pandas
+•	Data Analysis: Statistical Analysis, Machine Learning, Data Visualization, Exploratory Data Analysis (EDA)
 
-    Seaborn
+•	Healthcare: Electronic Medical Records, Cardiac Electrophysiology, Physiological Signal Analysis
 
-    SciPy
-    
-    SciKit-Learn
-
-SQL
-
-Flask
-
-PowerBI
-
-Tableau
-
-C++
 
     
