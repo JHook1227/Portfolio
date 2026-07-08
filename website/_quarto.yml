@@ -16,9 +16,6 @@ website:
 
       - href: src/about.html
         text: About
-
-      - href: src/blog.html
-        text: Project Blog
       
       - href: src/education.html
         text: Education 
