@@ -1,5 +1,5 @@
 # Portfolio
-CS Projects
+CS Project
 
 Author: Joseph Hook
 
