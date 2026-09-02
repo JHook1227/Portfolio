@@ -1,0 +1,39 @@
+---
+title: "Respiratory Illness Tableau Dashboard"
+---
+
+# Overview
+
+Respiratory illnesses became a major focus of healthcare planning following the COVID-19 pandemic. This project uses healthcare data to examine factors associated with respiratory illness risk and mortality.
+
+The goal was to transform complex healthcare data into an interactive visualization that could communicate risk patterns to both healthcare providers and patients.
+
+## Interactive Dashboard
+
+<iframe
+src = "https://public.tableau.com/app/profile/joseph.hook7377/viz/IVProj/Dashboard3?publish=yes" 
+width = "100%"
+height = "800px"
+frameborder = "0"
+allowfullscreen>
+</iframe>
+
+## Key Findings
+
+- Finding from your analysis
+- Finding from your analysis
+- Finding from your analysis
+
+## Data Analysis
+
+Python and Pandas were used to prepare and analyze the underlying data before visualization in Tableau.
+
+## Risk Stratification
+
+Patients were categorized into risk levels based on the analyzed health characteristics, allowing higher-risk populations to be identified.
+
+## Technologies
+
+- Python
+- Pandas
+- Tableau
