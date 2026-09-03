@@ -25,6 +25,8 @@ website:
       
       - href: src/projects.html
         text: Projects
+      
+    
 
       - href: src/resume.html
         text: Resume
