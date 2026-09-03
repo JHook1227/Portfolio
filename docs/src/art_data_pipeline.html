@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>art_data_pipeline – Portfolio: Joseph Hook</title>
+<title>Assisted Reproductive Technology Data Pipeline &amp; Analysis – Portfolio: Joseph Hook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,6 +111,14 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link active" href="../src/art_data_pipeline.html" aria-current="page"> 
+<span class="menu-text">ART Data Pipeline</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../src/respiratory_tableau.html"> 
+<span class="menu-text">Respiratory Tableau Dashboard</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../src/resume.html"> 
 <span class="menu-text">Resume</span></a>
   </li>  
@@ -129,17 +137,105 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#project-overview" id="toc-project-overview" class="nav-link active" data-scroll-target="#project-overview">Project Overview</a>
+  <ul class="collapse">
+  <li><a href="#project-goals" id="toc-project-goals" class="nav-link" data-scroll-target="#project-goals">Project Goals</a></li>
+  <li><a href="#data-pipeline" id="toc-data-pipeline" class="nav-link" data-scroll-target="#data-pipeline">Data Pipeline</a></li>
+  <li><a href="#data-mining-exploratory-analysis" id="toc-data-mining-exploratory-analysis" class="nav-link" data-scroll-target="#data-mining-exploratory-analysis">Data Mining &amp; Exploratory Analysis</a></li>
+  <li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis">Statistical Analysis</a></li>
+  <li><a href="#statistical-findings" id="toc-statistical-findings" class="nav-link" data-scroll-target="#statistical-findings">Statistical Findings</a></li>
+  <li><a href="#results-lessons-learned" id="toc-results-lessons-learned" class="nav-link" data-scroll-target="#results-lessons-learned">Results &amp; Lessons Learned</a></li>
+  <li><a href="#technologies" id="toc-technologies" class="nav-link" data-scroll-target="#technologies">Technologies</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Assisted Reproductive Technology Data Pipeline &amp; Analysis</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<section id="project-overview" class="level1">
+<h1>Project Overview</h1>
+<p>This project developed an end-to-end healthcare data pipeline for analyzing Assisted Reproductive Technology (ART) data. The goal was to connect data acquisition, storage, processing, statistical analysis, and presentation into a unified workflow with potential applications in patient education and provider-based patient classification.</p>
+<p>The project integrates a Python-based data processing and analysis workflow with a SQL database and a central data repository. The resulting pipeline provides a foundation for accessing, transforming, analyzing, and presenting healthcare data while demonstrating the complete data analysis lifecycle.</p>
+<section id="project-goals" class="level2">
+<h2 class="anchored" data-anchor-id="project-goals">Project Goals</h2>
+<ul>
+<li>Build an end-to-end healthcare data pipeline</li>
+<li>Develop a structured workflow for data acquisition, processing, and analysis</li>
+<li>Apply exploratory data analysis and statistical methods to real-world ART data</li>
+<li>Identify relationships and patterns within ART outcomes</li>
+<li>Connect analytical findings to potential applications in patient care</li>
+<li>Develop technical proficiency across Python, SQL, statistics, and data visualization</li>
+</ul>
+</section>
+<section id="data-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="data-pipeline">Data Pipeline</h2>
+<p>The project combines multiple components to create a complete data workflow:</p>
+<p><strong>Data Repository → SQL Database → Python Processing &amp; Analysis → Visualization</strong></p>
+<p>The pipeline uses SQL for structured data storage and Python for data cleaning, transformation, exploratory analysis, statistical modeling, and visualization. This architecture allows the data to move through each stage of the analytical lifecycle in a reproducible manner.</p>
+</section>
+<section id="data-mining-exploratory-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="data-mining-exploratory-analysis">Data Mining &amp; Exploratory Analysis</h2>
+<p>I performed exploratory data analysis and data mining to investigate relationships between ART-related variables and identify meaningful patterns within the dataset. This included examining distributions, comparing categorical variables, and evaluating relationships between potential explanatory variables and outcomes.</p>
+<p>The analysis provided a foundation for determining which variables warranted further statistical investigation.</p>
+</section>
+<section id="statistical-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-analysis">Statistical Analysis</h2>
+<p>I used statistical methods to evaluate relationships identified during exploratory analysis. A primary focus was examining whether interactions between selected variables could improve the performance of a regression model.</p>
+<p>For a consistent comparison, the analysis focused on:</p>
+<ul>
+<li><strong>State:</strong> California</li>
+<li><strong>Type:</strong> Donor frozen/embryos</li>
+</ul>
+<p>Two regression models were evaluated. Model A used the selected features as additive predictors, while Model B incorporated an interaction term combining State and Type.</p>
+<p>The initial RMSE was approximately 19. Adding the interaction term did not produce a meaningful improvement in predictive performance.</p>
+</section>
+<section id="statistical-findings" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-findings">Statistical Findings</h2>
+<p>A Chi-Square test of independence was also performed to evaluate the relationship between State and Type. The test identified a statistically significant association between the variables, indicating that the distribution of ART Type varied across states.</p>
+<p>However, the statistical dependence between the variables did not translate into improved predictive performance when their interaction was incorporated into the regression model.</p>
+<p>This demonstrated an important distinction in statistical modeling: <strong>variables can be statistically associated without their interaction providing additional predictive value in a regression model.</strong></p>
+</section>
+<section id="results-lessons-learned" class="level2">
+<h2 class="anchored" data-anchor-id="results-lessons-learned">Results &amp; Lessons Learned</h2>
+<p>The project ultimately achieved its primary goal of establishing a complete data pipeline and applying statistical analysis to real-world healthcare data.</p>
+<p>Although attempts to reduce RMSE through additional data transformations did not improve model performance, the result provided an opportunity to investigate why performance remained unchanged. This reinforced the importance of evaluating statistical results rather than assuming that additional transformations or model complexity will necessarily improve a model.</p>
+<p>The project also strengthened my understanding of the complete healthcare data analysis lifecycle, from structured data storage and preprocessing through exploratory analysis, statistical modeling, and interpretation.</p>
+</section>
+<section id="technologies" class="level2">
+<h2 class="anchored" data-anchor-id="technologies">Technologies</h2>
+<p><strong>Programming &amp; Analysis:</strong> Python, Pandas, NumPy, SciPy, Scikit-learn, Matplotlib, Seaborn</p>
+<p><strong>Database:</strong> SQLite</p>
+<p><strong>Framework:</strong> Flask</p>
+<p><strong>Other:</strong> Git</p>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

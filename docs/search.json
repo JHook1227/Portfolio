@@ -11,14 +11,7 @@
     "href": "src/respiratory_tableau.html",
     "title": "Respiratory Illness Tableau Dashboard",
     "section": "",
-    "text": "Respiratory illnesses became a major focus of healthcare planning following the COVID-19 pandemic. This project uses healthcare data to examine factors associated with respiratory illness risk and mortality.\nThe goal was to transform complex healthcare data into an interactive visualization that could communicate risk patterns to both healthcare providers and patients.\n\n\n\n\n\n\n\n\nFinding from your analysis\nFinding from your analysis\nFinding from your analysis\n\n\n\n\nPython and Pandas were used to prepare and analyze the underlying data before visualization in Tableau.\n\n\n\nPatients were categorized into risk levels based on the analyzed health characteristics, allowing higher-risk populations to be identified.\n\n\n\n\nPython\nPandas\nTableau"
-  },
-  {
-    "objectID": "src/respiratory_tableau.html#key-findings",
-    "href": "src/respiratory_tableau.html#key-findings",
-    "title": "Respiratory Illness Tableau Dashboard",
-    "section": "",
-    "text": "Finding from your analysis\nFinding from your analysis\nFinding from your analysis"
+    "text": "Respiratory illnesses became a major focus of healthcare planning following the COVID-19 pandemic. This project uses healthcare data to examine factors associated with respiratory illness risk and mortality.\nThe goal was to transform complex healthcare data into an interactive visualization that could communicate risk patterns to both healthcare providers and patients.\n\n\n\n\n\n\n\n\n\nPython and Pandas were used to prepare and analyze the underlying data before visualization in Tableau.\n\n\n\nPatients were categorized into risk levels based on the analyzed health characteristics, allowing higher-risk populations to be identified.\n\n\n\n\nPython\nPandas\nTableau"
   },
   {
     "objectID": "src/respiratory_tableau.html#data-analysis",
@@ -63,6 +56,62 @@
     "text": "My name is Joseph, I am a healthcare professional and data science graduate with experience in cardiac electrophysiology, clinical data, interpretation and interdisciplinary patient care. Combines hands-on clinical expertise with a strong foundation in data science, machine learning, and statistical analysis to extract meaningful insights from complex healthcare data. Experienced using Python, SQL, and data visualization tools to analyze large datasets and develop predictive models. Military veteran recognized for leadership, analytical problem-solving, and performing effectively in high-pressure environments, bringing a unique blend of clinical knowledge and technical expertise to bioinformatics and healthcare data science."
   },
   {
+    "objectID": "src/art_data_pipeline.html",
+    "href": "src/art_data_pipeline.html",
+    "title": "Assisted Reproductive Technology Data Pipeline & Analysis",
+    "section": "",
+    "text": "This project developed an end-to-end healthcare data pipeline for analyzing Assisted Reproductive Technology (ART) data. The goal was to connect data acquisition, storage, processing, statistical analysis, and presentation into a unified workflow with potential applications in patient education and provider-based patient classification.\nThe project integrates a Python-based data processing and analysis workflow with a SQL database and a central data repository. The resulting pipeline provides a foundation for accessing, transforming, analyzing, and presenting healthcare data while demonstrating the complete data analysis lifecycle.\n\n\n\nBuild an end-to-end healthcare data pipeline\nDevelop a structured workflow for data acquisition, processing, and analysis\nApply exploratory data analysis and statistical methods to real-world ART data\nIdentify relationships and patterns within ART outcomes\nConnect analytical findings to potential applications in patient care\nDevelop technical proficiency across Python, SQL, statistics, and data visualization\n\n\n\n\nThe project combines multiple components to create a complete data workflow:\nData Repository → SQL Database → Python Processing & Analysis → Visualization\nThe pipeline uses SQL for structured data storage and Python for data cleaning, transformation, exploratory analysis, statistical modeling, and visualization. This architecture allows the data to move through each stage of the analytical lifecycle in a reproducible manner.\n\n\n\nI performed exploratory data analysis and data mining to investigate relationships between ART-related variables and identify meaningful patterns within the dataset. This included examining distributions, comparing categorical variables, and evaluating relationships between potential explanatory variables and outcomes.\nThe analysis provided a foundation for determining which variables warranted further statistical investigation.\n\n\n\nI used statistical methods to evaluate relationships identified during exploratory analysis. A primary focus was examining whether interactions between selected variables could improve the performance of a regression model.\nFor a consistent comparison, the analysis focused on:\n\nState: California\nType: Donor frozen/embryos\n\nTwo regression models were evaluated. Model A used the selected features as additive predictors, while Model B incorporated an interaction term combining State and Type.\nThe initial RMSE was approximately 19. Adding the interaction term did not produce a meaningful improvement in predictive performance.\n\n\n\nA Chi-Square test of independence was also performed to evaluate the relationship between State and Type. The test identified a statistically significant association between the variables, indicating that the distribution of ART Type varied across states.\nHowever, the statistical dependence between the variables did not translate into improved predictive performance when their interaction was incorporated into the regression model.\nThis demonstrated an important distinction in statistical modeling: variables can be statistically associated without their interaction providing additional predictive value in a regression model.\n\n\n\nThe project ultimately achieved its primary goal of establishing a complete data pipeline and applying statistical analysis to real-world healthcare data.\nAlthough attempts to reduce RMSE through additional data transformations did not improve model performance, the result provided an opportunity to investigate why performance remained unchanged. This reinforced the importance of evaluating statistical results rather than assuming that additional transformations or model complexity will necessarily improve a model.\nThe project also strengthened my understanding of the complete healthcare data analysis lifecycle, from structured data storage and preprocessing through exploratory analysis, statistical modeling, and interpretation.\n\n\n\nProgramming & Analysis: Python, Pandas, NumPy, SciPy, Scikit-learn, Matplotlib, Seaborn\nDatabase: SQLite\nFramework: Flask\nOther: Git"
+  },
+  {
+    "objectID": "src/art_data_pipeline.html#project-goals",
+    "href": "src/art_data_pipeline.html#project-goals",
+    "title": "Assisted Reproductive Technology Data Pipeline & Analysis",
+    "section": "",
+    "text": "Build an end-to-end healthcare data pipeline\nDevelop a structured workflow for data acquisition, processing, and analysis\nApply exploratory data analysis and statistical methods to real-world ART data\nIdentify relationships and patterns within ART outcomes\nConnect analytical findings to potential applications in patient care\nDevelop technical proficiency across Python, SQL, statistics, and data visualization"
+  },
+  {
+    "objectID": "src/art_data_pipeline.html#data-pipeline",
+    "href": "src/art_data_pipeline.html#data-pipeline",
+    "title": "Assisted Reproductive Technology Data Pipeline & Analysis",
+    "section": "",
+    "text": "The project combines multiple components to create a complete data workflow:\nData Repository → SQL Database → Python Processing & Analysis → Visualization\nThe pipeline uses SQL for structured data storage and Python for data cleaning, transformation, exploratory analysis, statistical modeling, and visualization. This architecture allows the data to move through each stage of the analytical lifecycle in a reproducible manner."
+  },
+  {
+    "objectID": "src/art_data_pipeline.html#data-mining-exploratory-analysis",
+    "href": "src/art_data_pipeline.html#data-mining-exploratory-analysis",
+    "title": "Assisted Reproductive Technology Data Pipeline & Analysis",
+    "section": "",
+    "text": "I performed exploratory data analysis and data mining to investigate relationships between ART-related variables and identify meaningful patterns within the dataset. This included examining distributions, comparing categorical variables, and evaluating relationships between potential explanatory variables and outcomes.\nThe analysis provided a foundation for determining which variables warranted further statistical investigation."
+  },
+  {
+    "objectID": "src/art_data_pipeline.html#statistical-analysis",
+    "href": "src/art_data_pipeline.html#statistical-analysis",
+    "title": "Assisted Reproductive Technology Data Pipeline & Analysis",
+    "section": "",
+    "text": "I used statistical methods to evaluate relationships identified during exploratory analysis. A primary focus was examining whether interactions between selected variables could improve the performance of a regression model.\nFor a consistent comparison, the analysis focused on:\n\nState: California\nType: Donor frozen/embryos\n\nTwo regression models were evaluated. Model A used the selected features as additive predictors, while Model B incorporated an interaction term combining State and Type.\nThe initial RMSE was approximately 19. Adding the interaction term did not produce a meaningful improvement in predictive performance."
+  },
+  {
+    "objectID": "src/art_data_pipeline.html#statistical-findings",
+    "href": "src/art_data_pipeline.html#statistical-findings",
+    "title": "Assisted Reproductive Technology Data Pipeline & Analysis",
+    "section": "",
+    "text": "A Chi-Square test of independence was also performed to evaluate the relationship between State and Type. The test identified a statistically significant association between the variables, indicating that the distribution of ART Type varied across states.\nHowever, the statistical dependence between the variables did not translate into improved predictive performance when their interaction was incorporated into the regression model.\nThis demonstrated an important distinction in statistical modeling: variables can be statistically associated without their interaction providing additional predictive value in a regression model."
+  },
+  {
+    "objectID": "src/art_data_pipeline.html#results-lessons-learned",
+    "href": "src/art_data_pipeline.html#results-lessons-learned",
+    "title": "Assisted Reproductive Technology Data Pipeline & Analysis",
+    "section": "",
+    "text": "The project ultimately achieved its primary goal of establishing a complete data pipeline and applying statistical analysis to real-world healthcare data.\nAlthough attempts to reduce RMSE through additional data transformations did not improve model performance, the result provided an opportunity to investigate why performance remained unchanged. This reinforced the importance of evaluating statistical results rather than assuming that additional transformations or model complexity will necessarily improve a model.\nThe project also strengthened my understanding of the complete healthcare data analysis lifecycle, from structured data storage and preprocessing through exploratory analysis, statistical modeling, and interpretation."
+  },
+  {
+    "objectID": "src/art_data_pipeline.html#technologies",
+    "href": "src/art_data_pipeline.html#technologies",
+    "title": "Assisted Reproductive Technology Data Pipeline & Analysis",
+    "section": "",
+    "text": "Programming & Analysis: Python, Pandas, NumPy, SciPy, Scikit-learn, Matplotlib, Seaborn\nDatabase: SQLite\nFramework: Flask\nOther: Git"
+  },
+  {
     "objectID": "src/education.html",
     "href": "src/education.html",
     "title": "Education",
@@ -74,7 +123,21 @@
     "href": "src/projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Assisted Reproductive Technology (ART) Data Mining and Analysis: https://github.com/JHook1227/DM-Project.git\nAssisted Reproductive Technology (ART) regression analysis and user application https://github.com/JHook1227/Portfolio.git\nMachine Learning Analysis of Diabetes-Related Amputations https://github.com/JHook1227/Diabetes_RF.git"
+    "text": "**Python | Pandas | Scikit-learn | Matplotlib | Seaborn | SQL*\nView Project"
+  },
+  {
+    "objectID": "src/projects.html#assisted-reproductive-technology-art-data-pipeline-and-linear-regression-model",
+    "href": "src/projects.html#assisted-reproductive-technology-art-data-pipeline-and-linear-regression-model",
+    "title": "Projects",
+    "section": "",
+    "text": "**Python | Pandas | Scikit-learn | Matplotlib | Seaborn | SQL*\nView Project"
+  },
+  {
+    "objectID": "src/projects.html#respiratory-illness-tableau-dashboard",
+    "href": "src/projects.html#respiratory-illness-tableau-dashboard",
+    "title": "Projects",
+    "section": "Respiratory Illness Tableau Dashboard",
+    "text": "Respiratory Illness Tableau Dashboard\nPython | Pandas | Tableau\nInteractive visualization of respiratory illness factors and mortality trends with a focus on risk stratification and healthcare decision-making.\nView Project"
   },
   {
     "objectID": "src/resume.html",
