@@ -11,7 +11,7 @@ The goal was to transform complex healthcare data into an interactive visualizat
 ## Interactive Dashboard
 
 <iframe
-src = "https://public.tableau.com/app/profile/joseph.hook7377/viz/IVProj/Dashboard3?publish=yes" 
+src = "https://public.tableau.com/views/IVProj/Dashboard3?:embed=yes&:showVizHome=no" 
 width = "100%"
 height = "800px"
 frameborder = "0"
@@ -19,7 +19,7 @@ allowfullscreen>
 </iframe>
 
 <iframe
-src ="https://public.tableau.com/app/profile/joseph.hook7377/viz/IVProj/Age?publish=yes"
+src ="https://public.tableau.com/views/IVProj/Age?:embed=yes&:showVizHome=no"
 width = "100%"
 height = "800px"
 frameborder = "0"
