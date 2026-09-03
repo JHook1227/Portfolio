@@ -26,7 +26,11 @@ website:
       - href: src/projects.html
         text: Projects
       
-    
+      - href: src/art_data_pipeline.html
+        text: ART Data Pipeline
+      
+      - href: src/respiratory_tableau.html
+        text: Respiratory Tableau Dashboard
 
       - href: src/resume.html
         text: Resume
