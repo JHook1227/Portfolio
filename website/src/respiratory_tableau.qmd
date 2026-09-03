@@ -18,11 +18,14 @@ frameborder = "0"
 allowfullscreen>
 </iframe>
 
-## Key Findings
+<iframe
+src ="https://public.tableau.com/app/profile/joseph.hook7377/viz/IVProj/Age?publish=yes"
+width = "100%"
+height = "800px"
+frameborder = "0"
+allowfullscreen>
+</iframe>
 
-- Finding from your analysis
-- Finding from your analysis
-- Finding from your analysis
 
 ## Data Analysis
 

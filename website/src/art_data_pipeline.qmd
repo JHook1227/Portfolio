@@ -1,0 +1,72 @@
+---
+title: "Assisted Reproductive Technology Data Pipeline & Analysis"
+---
+
+# Project Overview
+
+This project developed an end-to-end healthcare data pipeline for analyzing Assisted Reproductive Technology (ART) data. The goal was to connect data acquisition, storage, processing, statistical analysis, and presentation into a unified workflow with potential applications in patient education and provider-based patient classification.
+
+The project integrates a Python-based data processing and analysis workflow with a SQL database and a central data repository. The resulting pipeline provides a foundation for accessing, transforming, analyzing, and presenting healthcare data while demonstrating the complete data analysis lifecycle.
+
+## Project Goals
+
+- Build an end-to-end healthcare data pipeline
+- Develop a structured workflow for data acquisition, processing, and analysis
+- Apply exploratory data analysis and statistical methods to real-world ART data
+- Identify relationships and patterns within ART outcomes
+- Connect analytical findings to potential applications in patient care
+- Develop technical proficiency across Python, SQL, statistics, and data visualization
+
+## Data Pipeline
+
+The project combines multiple components to create a complete data workflow:
+
+**Data Repository → SQL Database → Python Processing & Analysis → Visualization**
+
+The pipeline uses SQL for structured data storage and Python for data cleaning, transformation, exploratory analysis, statistical modeling, and visualization. This architecture allows the data to move through each stage of the analytical lifecycle in a reproducible manner.
+
+## Data Mining & Exploratory Analysis
+
+I performed exploratory data analysis and data mining to investigate relationships between ART-related variables and identify meaningful patterns within the dataset. This included examining distributions, comparing categorical variables, and evaluating relationships between potential explanatory variables and outcomes.
+
+The analysis provided a foundation for determining which variables warranted further statistical investigation.
+
+## Statistical Analysis
+
+I used statistical methods to evaluate relationships identified during exploratory analysis. A primary focus was examining whether interactions between selected variables could improve the performance of a regression model.
+
+For a consistent comparison, the analysis focused on:
+
+- **State:** California
+- **Type:** Donor frozen/embryos
+
+Two regression models were evaluated. Model A used the selected features as additive predictors, while Model B incorporated an interaction term combining State and Type.
+
+The initial RMSE was approximately 19. Adding the interaction term did not produce a meaningful improvement in predictive performance.
+
+## Statistical Findings
+
+A Chi-Square test of independence was also performed to evaluate the relationship between State and Type. The test identified a statistically significant association between the variables, indicating that the distribution of ART Type varied across states.
+
+However, the statistical dependence between the variables did not translate into improved predictive performance when their interaction was incorporated into the regression model.
+
+This demonstrated an important distinction in statistical modeling: **variables can be statistically associated without their interaction providing additional predictive value in a regression model.**
+
+## Results & Lessons Learned
+
+The project ultimately achieved its primary goal of establishing a complete data pipeline and applying statistical analysis to real-world healthcare data.
+
+Although attempts to reduce RMSE through additional data transformations did not improve model performance, the result provided an opportunity to investigate why performance remained unchanged. This reinforced the importance of evaluating statistical results rather than assuming that additional transformations or model complexity will necessarily improve a model.
+
+The project also strengthened my understanding of the complete healthcare data analysis lifecycle, from structured data storage and preprocessing through exploratory analysis, statistical modeling, and interpretation.
+
+## Technologies
+
+**Programming & Analysis:** Python, Pandas, NumPy, SciPy, Scikit-learn, Matplotlib, Seaborn
+
+**Database:** SQLite
+
+**Framework:** Flask
+
+**Other:** Git
+
