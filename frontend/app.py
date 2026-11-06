@@ -9,24 +9,33 @@ app = Flask(__name__)
 database = os.path.join(os.path.dirname(__file__), 'database.db')
 
 def init_db():
-    if not os.path.exists(database):
-        conn = sqlite3.connect(database)
-        c = conn.cursor()
+    conn = sqlite3.connect(database)
+    c = conn.cursor()
 
-        c.execute(''' 
-                  CREATE TABLE users(
-                  id INTEGER PRIMARY KEY AUTOINCREMENT,
-                  username TEXT NOT NULL UNIQUE,
-                  password TEXT NOT NULL
-                  )'''
-                  )
+    c.execute(''' 
+                CREATE TABLE IF NOT EXISTS users(
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                username TEXT NOT NULL UNIQUE,
+                password TEXT NOT NULL
+                )'''
+                )
         
-        c.execute("INSERT INTO users (username, password) VALUES (?,?)", ('test','1234'))
-        conn.commit()
-        conn.close()
-        print("Database Initialized.")
-    else:
-        print("Database exists already")
+    c.execute("INSERT OR IGNORE INTO users (username, password) VALUES (?,?)", ('test','1234'))
+    c.execute('''
+                CREATE TABLE IF NOT EXISTS user_data(
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                username TEXT NOT NULL,
+                result REAL NOT NULL,
+                description TEXT NOT NULL,
+                location TEXT NOT NULL,
+                type TEXT NOT NULL,
+                breakout TEXT NOT NULL
+                )'''
+                )
+    conn.commit()
+    conn.close()
+    print("Database Initialized.")
+    
 
 @app.route("/index")
 def index():
@@ -66,24 +75,49 @@ def generate_graphs():
 
 @app.route("/dashboard", methods=["GET", "POST"])
 def dashboard():
+    username = None
     result = None
     description = None
     type_ = None
     location = None
     breakout = None
     if request.method == "POST":
-        state = request.form.get("State")
-        attribute = request.form.get("Patient type")
-        breakout = request.form.get("Breakout")
-        user_input = {"LocationAbbr":state, "Type":attribute, "Breakout":breakout}
+        action = request.form.get("action")
+        if action == "save":
+            username = session.get('user')
 
-        result_dict = bootstrap_linear(clean_all, user_input)
+            if not username:
+                return redirect(url_for('login'))
+            
+            result = request.form.get("result")
+            description = request.form.get("description")
+            type_ = request.form.get("type")
+            location = request.form.get("location")
+            breakout = request.form.get("breakout")
+            
+            result = float(result) 
+            
+            conn = sqlite3.connect(database)
+            c = conn.cursor()
+            c.execute("INSERT INTO user_data (username, result, description, location, type, breakout) VALUES (?,?,?,?,?,?)", (username, result, description, location, type_, breakout))
+            conn.commit()
+            conn.close()
+            
+            return render_template("dashboard.html", message="Data saved successfully!", result=result, description=description, location=location, type=type_, breakout=breakout)
+        elif action == "submit":
+            
+            state = request.form.get("State")
+            attribute = request.form.get("Patient type")
+            breakout = request.form.get("Breakout")
+            user_input = {"LocationAbbr":state, "Type":attribute, "Breakout":breakout}
 
-        location = user_input["LocationAbbr"]
-        type_ = user_input["Type"]
-        breakout = user_input["Breakout"]
-        result = result_dict["expected_success_rate"]
-        description = result_dict
+            result_dict = bootstrap_linear(clean_all, user_input)
+
+            location = user_input["LocationAbbr"]
+            type_ = user_input["Type"]
+            breakout = user_input["Breakout"]
+            result = result_dict["expected_success_rate"]
+            description = result_dict
 
     return render_template("dashboard.html", result=result, description=description, location=location, type=type_, breakout=breakout)
     
